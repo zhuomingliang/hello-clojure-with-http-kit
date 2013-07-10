@@ -11,7 +11,9 @@ Download from http://example.com/FIXME.
 ### Development 
 
     $ lein ring server     # using Jetty
+
 or
+
     $ lein run             # using http-kit
 
 ### Deployment
