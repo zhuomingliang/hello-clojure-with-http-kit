@@ -4,14 +4,20 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.5.1"]
-                 [ring "1.2.0"]                               ;; base
-                 [com.cemerick/friend "0.1.5"]                ;; authentication (must be before compojure)
-                 [compojure "1.1.5"]                          ;; routing
-                 [enlive "1.1.1"]                             ;; template
-                 [korma "0.3.0-RC5"]                          ;; database access
+                 [ring "1.2.0"]                               ;; Base
+                 [com.cemerick/friend "0.1.5"]                ;; Authentication (must be before compojure)
+                 [compojure "1.1.5"]                          ;; Routing
+                 [lib-noir "0.6.6"]                           ;; Validation, Session
+                 [com.taoensso/tower "2.0.0-alpha13"]         ;; I18n
+                 [enlive "1.1.1"]                             ;; Template
+              ;; [hiccup "1.0.3"]                             ;; Template
+                 [korma "0.3.0-RC5"]                          ;; Database access
                  [org.postgresql/postgresql "9.2-1002-jdbc4"] ;; PostgreSQL driver
-                 [http-kit "2.1.6"]                           ;; asynchronous HTTP
-                 [ritz/ritz-nrepl-middleware "0.7.0"]]        ;; debugging
+              ;; [mysql/mysql-connector-java "5.1.6"]         ;; MySQL driver
+                 [me.raynes/fs "1.4.5"]                       ;; File system utilities
+                 [http-kit "2.1.6"]                           ;; Asynchronous HTTP
+                 [ritz/ritz-nrepl-middleware "0.7.0"]]        ;; Debugging
+                 [ring.middleware.logger "0.4.1"]             ;; Ring middleware to log each request using Log4J
   :main hello.core
   :plugins [[lein-daemon "0.5.4"]
             [lein-ring "0.8.6"]
