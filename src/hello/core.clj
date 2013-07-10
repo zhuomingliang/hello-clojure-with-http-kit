@@ -17,7 +17,7 @@
 (def app
   (site all-routes))
 
-(defn in-dev? [args] true)
+;; (def in-dev? true)
 
 (defn -main
   "I don't do a whole lot ... yet."
@@ -34,8 +34,8 @@
         (when (:help options)
           (println banner)
           (System/exit 0))
-        (log/info "Running server on port" (:port options))
-        (let [handler (if (in-dev? args)
+        (log/info "Running server on port" (:port options) "with development mode" (:development options))
+        (let [handler (if in-dev?
                         (reload/wrap-reload (site #'all-routes)) ;; only reload when dev
                         (site all-routes))
               _ (run-server handler {:port (:port options)})])))
