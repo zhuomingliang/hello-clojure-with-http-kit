@@ -35,6 +35,8 @@
           (println banner)
           (System/exit 0))
         (log/info "Running server on port" (:port options) "with development mode" (:development options))
+        ;; (defonce in-repl? (:repl options))
+        ;; (defonce repl-server (repl/start-server :port (:repl options)))
         (let [handler (if in-dev?
                         (reload/wrap-reload (site #'all-routes)) ;; only reload when dev
                         (site all-routes))
