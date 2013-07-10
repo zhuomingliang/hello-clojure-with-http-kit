@@ -1,4 +1,4 @@
-(defproject test "0.1.0-SNAPSHOT"
+(defproject hello "0.1.0-SNAPSHOT"
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
@@ -16,8 +16,9 @@
               ;; [mysql/mysql-connector-java "5.1.6"]         ;; MySQL driver
                  [me.raynes/fs "1.4.5"]                       ;; File system utilities
                  [http-kit "2.1.6"]                           ;; Asynchronous HTTP
-                 [ritz/ritz-nrepl-middleware "0.7.0"]]        ;; Debugging
+                 [ritz/ritz-nrepl-middleware "0.7.0"]         ;; Debugging
                  [ring.middleware.logger "0.4.1"]             ;; Ring middleware to log each request using Log4J
+                ]
   :main hello.core
   :plugins [[lein-daemon "0.5.4"]
             [lein-ring "0.8.6"]
