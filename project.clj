@@ -18,6 +18,7 @@
                  [http-kit "2.1.6"]                           ;; Asynchronous HTTP
                  [ritz/ritz-nrepl-middleware "0.7.0"]         ;; Debugging
                  [ring.middleware.logger "0.4.1"]             ;; Ring middleware to log each request using Log4J
+                 [org.clojure/tools.cli "0.2.2"]              ;; Command line argument parser
                 ]
   :main hello.core
   :plugins [[lein-daemon "0.5.4"]
@@ -26,6 +27,7 @@
   :repl-options {:nrepl-middleware
                   [ritz.nrepl.middleware.javadoc/wrap-javadoc
                    ritz.nrepl.middleware.simple-complete/wrap-simple-complete]}
+  :resource-paths ["resources"]
   ;; :resource-paths ["lib/*", "resources"]
   :ring {:handler hello.core/app}
   :daemon {:hello {:ns hello.core
