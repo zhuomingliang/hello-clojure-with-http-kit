@@ -6,13 +6,16 @@
             [compojure.route :as route])
   (:gen-class))
 
-(defn in-dev?
-  [args]
-  true)
+
 
 (defroutes all-routes
   (GET "/" [] "Hello World!")
   (route/not-found "<p>Page not found.</p>")) ;; all other, return 404
+
+(def app
+  (site all-routes))
+
+(defn in-dev? [args] true)
 
 (defn -main
   "I don't do a whole lot ... yet."
