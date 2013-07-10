@@ -19,7 +19,7 @@
   :repl-options {:nrepl-middleware
                   [ritz.nrepl.middleware.javadoc/wrap-javadoc
                    ritz.nrepl.middleware.simple-complete/wrap-simple-complete]}
-  :resource-paths ["lib/*", "resources"]
+  ;; :resource-paths ["lib/*", "resources"]
   :ring {:handler hello.core/app}
   :daemon {:hello {:ns hello.core
                    :pidfile "hello.pid"}}

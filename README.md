@@ -8,7 +8,13 @@ Download from http://example.com/FIXME.
 
 ## Usage
 
-FIXME: explanation
+### Development 
+
+    $ lein ring server     # using Jetty
+or
+    $ lein run             # using http-kit
+
+### Deployment
 
     $ java -jar hello-0.1.0-standalone.jar [args]
 
