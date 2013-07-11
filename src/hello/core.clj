@@ -5,13 +5,14 @@
         [clojure.tools.cli :only [cli]])
   (:require [ring.middleware.reload :as reload]
             [compojure.route :as route]
-            [clojure.tools.logging :as log])
+            [clojure.tools.logging :as log]
+            [hello.controllers.index :as index])
   (:import java.net.URL)
   (:gen-class))
 
 
 (defroutes all-routes
-  (GET "/" [] "Hello World!")
+  index/routes
   (route/not-found "<p>Page not found.</p>")) ;; all other, return 404
 
 (def app
@@ -34,7 +35,7 @@
         (when (:help options)
           (println banner)
           (System/exit 0))
-        (log/info "Running server on port" (:port options) "with development mode" (:development options))
+        (log/info "Running server on port" (:port options) "with development mode" in-dev?)
         ;; (defonce in-repl? (:repl options))
         ;; (defonce repl-server (repl/start-server :port (:repl options)))
         (let [handler (if in-dev?
