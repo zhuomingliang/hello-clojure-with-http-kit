@@ -1,9 +1,13 @@
 (ns hello.controllers.index
   (:use [compojure.core :only [defroutes GET]]
-  	    [hello.views.index :only [render]]))
+        [hello.views.comments])
+  (:require [compojure.route :as route]
+            [hello.views.index :as index]
+            [hello.models.comments :as Comment]))
 
-(defn- show []
-  (render))
+(defn- render []
+  (let [comments (Comment/find-all)]
+  	(comments-snippet comments)))
 
 (defroutes routes
-  (GET "/" [] (show)))
+  (GET "/" [] (index/render (render))))

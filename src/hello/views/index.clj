@@ -1,8 +1,11 @@
 (ns hello.views.index
-  (:use [net.cgrand.enlive-html]))
+  (:use [net.cgrand.enlive-html :only [deftemplate content]]
+        [hello.views.comments]))
 
-(defn render []
-  (apply str (-> "hello/views/index.html"
-    (html-resource)
-    (transform [] [])
-    (emit*))))
+
+(deftemplate render
+  "hello/views/index.html"
+  [comments]
+
+  [:body]
+  (content comments))

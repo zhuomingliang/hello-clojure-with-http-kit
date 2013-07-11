@@ -1,6 +1,6 @@
 (ns hello.config.db
   (:use [korma.db :only (defdb postgres)]
-  	     [hello.config.config]))
+        [hello.config.config]))
 
 (defdb prod (postgres {:db (str (:dbname postgres-config))
                        :user (str (:user postgres-config))

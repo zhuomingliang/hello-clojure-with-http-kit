@@ -1,19 +1,13 @@
 (ns hello.core
   (:use [org.httpkit.server :only [run-server]]
-        [compojure.core :only [defroutes GET POST]]
         [compojure.handler :only [site]]
-        [clojure.tools.cli :only [cli]])
+        [clojure.tools.cli :only [cli]]
+        [hello.routes])
   (:require [ring.middleware.reload :as reload]
             [compojure.route :as route]
-            [clojure.tools.logging :as log]
-            [hello.controllers.index :as index])
+            [clojure.tools.logging :as log])
   (:import java.net.URL)
   (:gen-class))
-
-
-(defroutes all-routes
-  index/routes
-  (route/not-found "<p>Page not found.</p>")) ;; all other, return 404
 
 (def app
   (site all-routes))
