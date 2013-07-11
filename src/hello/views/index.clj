@@ -1,6 +1,5 @@
 (ns hello.views.index
-  (:use [net.cgrand.enlive-html :only [deftemplate content]]
-        [hello.views.comments]))
+  (:use [net.cgrand.enlive-html :only [deftemplate content]]))
 
 
 (deftemplate render

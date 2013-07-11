@@ -1,8 +1,8 @@
-(ns hello.views.comments
+(ns hello.views.snippets.comments
   (:use [net.cgrand.enlive-html]))
 
 (defsnippet comments-snippet
-  "hello/views/comments.html" [:table]
+  "hello/views/snippets/comments.html" [:table]
   [comments]
 
   [:tr]
