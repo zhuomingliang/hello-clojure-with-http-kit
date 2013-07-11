@@ -4,7 +4,6 @@
         [clojure.tools.cli :only [cli]]
         [hello.routes])
   (:require [ring.middleware.reload :as reload]
-            [compojure.route :as route]
             [clojure.tools.logging :as log])
   (:import java.net.URL)
   (:gen-class))
