@@ -7,7 +7,6 @@
 
   [:tr]
   (clone-for [i (range (count comments))]
-    [:td]
-    (let [comment (get comments i)]
-      (content (:message comment))))
+  	[:td any-node]
+    (replace-vars (dissoc (get comments i) :id))) ;; use id with number will lead to java.lang.ClassCastException: java.lang.Long cannot be cast to java.lang.String
   )
