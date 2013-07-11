@@ -1,5 +1,5 @@
 (ns hello.views.comments
-  (:use [net.cgrand.enlive-html :only [defsnippet clone-for]]))
+  (:use [net.cgrand.enlive-html]))
 
 (defsnippet comments-snippet
   "hello/views/comments.html" [:table]
@@ -7,6 +7,7 @@
 
   [:tr]
   (clone-for [i (range (count comments))]
-  	[:content]
-  	"hello"
-  ))
+    [:td]
+    (let [comment (get comments i)]
+      (content (:message comment))))
+  )
