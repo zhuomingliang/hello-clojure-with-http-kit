@@ -5,7 +5,6 @@
         [hello.routes])
   (:require [ring.middleware.reload :as reload]
             [clojure.tools.logging :as log])
-  (:import java.net.URL)
   (:gen-class))
 
 (def app
